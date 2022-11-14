@@ -2,6 +2,8 @@ const express = require('express');
 const bodyParser = require('body-parser')
 const app = express();
 const connection = require('./database/database')
+const categoriesController = require('./categories/categoriesController');
+const articlesController = require('./articles/articlesController');
 
 //view engine
 app.set('view engine', 'ejs')
@@ -20,6 +22,9 @@ connection
     }).catch((error)=>{
         console.log(error)
 });
+
+app.use('/', categoriesController)
+app.use('/', articlesController)
 
 
 app.get('/', (req, res)=>{
