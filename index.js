@@ -4,6 +4,10 @@ const app = express();
 const connection = require('./database/database')
 const categoriesController = require('./categories/categoriesController');
 const articlesController = require('./articles/articlesController');
+const Category = require('./categories/Category');
+const Article = require('./articles/Article');
+
+
 
 //view engine
 app.set('view engine', 'ejs')
