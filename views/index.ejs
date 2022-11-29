@@ -1,5 +1,24 @@
 <%- include ('./partials/header.ejs'); %>
+<%- include ('./partials/homenavbar.ejs'); %>
 <body>
-    <p>teste</p>
+    <div class="container">
+        <hr>
+        <div class="jumbotron">
+            <h1 class="display-4">Bem-vindo!</h1>
+            <p class="lead">Este é um simples blog criado com <strong>NodeJS, EJS, MySql, Sequelize e TinyMCE</strong></p>
+          </div>
+        <hr>
+            <% articles.forEach(article =>{ %>
+                <div class="card">
+                    <div class="card-header">
+                        <h6><%= article.title %></h6>
+                    </div>
+                    <div class="card-body">
+                        <a href="/<%= article.slug %>" class="btn btn-success">Ler Artigo</a>
+                    </div>
+                </div>
+                <br>
+            <%})%>    
+        </div>
 </body>
 <%- include ('./partials/footer.ejs'); %>
